@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>GiftHub - Delivery Tracking Demo</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Arial,sans-serif;
+}
+
+body{
+  background:#f3f6f9;
+  color:#222;
+}
+
+.header{
+  background:#111827;
+  color:white;
+  padding:22px 15px;
+  text-align:center;
+}
+
+.header h1{
+  font-size:28px;
+}
+
+.demo{
+  display:inline-block;
+  margin-top:8px;
+  background:#f59e0b;
+  color:#111;
+  padding:5px 12px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:bold;
+}
+
+.container{
+  max-width:600px;
+  margin:25px auto;
+  padding:0 15px;
+}
+
+.search{
+  background:white;
+  padding:20px;
+  border-radius:15px;
+  box-shadow:0 4px 15px #00000012;
+}
+
+.search input{
+  width:100%;
+  padding:14px;
+  border:1px solid #ddd;
+  border-radius:9px;
+  margin:10px 0;
+  font-size:15px;
+}
+
+.search button{
+  width:100%;
+  padding:14px;
+  background:#111827;
+  color:white;
+  border:0;
+  border-radius:9px;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.card{
+  background:white;
+  margin-top:20px;
+  padding:20px;
+  border-radius:15px;
+  box-shadow:0 4px 15px #00000012;
+}
+
+.status{
+  background:#ecfdf5;
+  color:#047857;
+  padding:15px;
+  border-radius:10px;
+  text-align:center;
+  margin-bottom:20px;
+}
+
+.status b{
+  display:block;
+  font-size:19px;
+  margin-top:5px;
+}
+
+.details p{
+  padding:9px 0;
+  border-bottom:1px solid #eee;
+  font-size:14px;
+}
+
+.details strong{
+  color:#555;
+}
+
+.timeline{
+  margin-top:20px;
+}
+
+.step{
+  position:relative;
+  padding:0 0 22px 35px;
+  border-left:2px solid #10b981;
+  margin-left:8px;
+}
+
+.step:last-child{
+  border-left:0;
+}
+
+.dot{
+  position:absolute;
+  left:-9px;
+  top:0;
+  width:16px;
+  height:16px;
+  background:#10b981;
+  border-radius:50%;
+  border:3px solid white;
+  box-shadow:0 0 0 1px #10b981;
+}
+
+.step h4{
+  font-size:15px;
+}
+
+.step p{
+  font-size:12px;
+  color:#777;
+  margin-top:4px;
+}
+
+.note{
+  margin-top:20px;
+  padding:12px;
+  background:#fff7ed;
+  color:#9a3412;
+  border-radius:9px;
+  font-size:12px;
+  text-align:center;
+}
+
+.footer{
+  text-align:center;
+  padding:25px;
+  color:#777;
+  font-size:12px;
+}
+
+#result{
+  display:none;
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+  <h1>🎁 GiftHub</h1>
+  <div class="demo">DEMO / SIMULATION</div>
+</header>
+
+<div class="container">
+
+  <div class="search">
+    <h3>Track Your Parcel</h3>
+    <input id="tracking"
+           placeholder="Enter Tracking ID"
+           value="GH-YAV-445001">
+    <button onclick="trackParcel()">Track Parcel</button>
+  </div>
+
+  <div id="result">
+
+    <div class="card">
+
+      <div class="status">
+        📦 Current Demo Status
+        <b>Near Yavatmal City</b>
+        <small>Parcel is approaching the destination area</small>
+      </div>
+
+      <div class="details">
+
+        <p><strong>Customer Name:</strong><br>
+        Shruti Dadanje</p>
+
+        <p><strong>House / Flat:</strong><br>
+        Dahake House</p>
+
+        <p><strong>Street / Area:</strong><br>
+        Pawar Sir Class</p>
+
+        <p><strong>Landmark:</strong><br>
+        Inspire Class</p>
+
+        <p><strong>City:</strong><br>
+        Yavatmal</p>
+
+        <p><strong>State:</strong><br>
+        Maharashtra</p>
+
+        <p><strong>PIN Code:</strong><br>
+        445001</p>
+
+        <p><strong>Country:</strong><br>
+        India</p>
+
+        <p><strong>Signature:</strong><br>
+        Shruti</p>
+
+      </div>
+
+      <div class="timeline">
+
+        <div class="step">
+          <span class="dot"></span>
+          <h4>Order Confirmed</h4>
+          <p>Parcel booking confirmed</p>
+        </div>
+
+        <div class="step">
+          <span class="dot"></span>
+          <h4>Parcel Dispatched</h4>
+          <p>Parcel dispatched from origin facility</p>
+        </div>
+
+        <div class="step">
+          <span class="dot"></span>
+          <h4>In Transit</h4>
+          <p>Parcel is moving toward destination</p>
+        </div>
+
+        <div class="step">
+          <span class="dot"></span>
+          <h4>Near Yavatmal City</h4>
+          <p>Demo status — approaching destination</p>
+        </div>
+
+        <div class="step">
+          <span class="dot"></span>
+          <h4>Out for Delivery</h4>
+          <p>Pending in this demo</p>
+        </div>
+
+      </div>
+
+      <div class="note">
+        ⚠️ This page is a demo/simulation and does not provide
+        real courier tracking information.
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<footer class="footer">
+  © 2026 GiftHub • Delivery Tracking Demo
+</footer>
+
+<script>
+function trackParcel(){
+
+  const id = document.getElementById("tracking").value.trim();
+
+  if(id === ""){
+    alert("Please enter Tracking ID");
+    return;
+  }
+
+  document.getElementById("result").style.display="block";
+
+  window.scrollTo({
+    top:document.getElementById("result").offsetTop - 20,
+    behavior:"smooth"
+  });
+}
+</script>
+
+</body>
+</html>
