@@ -245,15 +245,16 @@ body{
 
     <h3>Track Your Parcel</h3>
 
-    <input
-      id="tracking"
-      type="tel"
-      inputmode="numeric"
-      pattern="[0-9]*"
-      maxlength="12"
-      placeholder="Enter Tracking Number"
-      oninput="this.value=this.value.replace(/[^0-9]/g,'')"
-    >
+<input
+  id="tracking"
+  type="tel"
+  inputmode="numeric"
+  pattern="[0-9]*"
+  maxlength="10"
+  value="9307688960"
+  placeholder="Enter Tracking Number"
+  oninput="this.value=this.value.replace(/[^0-9]/g,'')"
+>
 
     <button onclick="trackParcel()">
       Track Parcel
